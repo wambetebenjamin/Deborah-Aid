@@ -1,0 +1,262 @@
+@import "tailwindcss";
+@import "../styles/css/template-fonts.css";
+@import "../styles/fonts/flaticon-local.css";
+
+/* Verbatim CSS custom properties preserved from charityworks-master/assets/css/bootstrap.min.css */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+  /* CharityWorks SCSS palette variables mapped directly from assets/scss/_color.scss & _variables.scss */
+  --cw-theme: #09cc7f;
+  --cw-theme-hover: #24ac75;
+  --cw-theme-deep: #069c60;
+  --cw-theme-soft: #e6faf2;
+  --cw-navy-heading: #072366;
+  --cw-hero-heading: #002d5b;
+  --cw-body-text: #10285d;
+  --cw-muted-text: #57667e;
+  --cw-subtle-text: #687693;
+  --cw-ice-bg: #f8fcff;
+  --cw-brand-bg: #f1f4fa;
+  --cw-testimonial-bg: #f9fafc;
+  --cw-form-bg: #f7fdff;
+  --cw-border: #eceff8;
+  --cw-footer-bg: #040c1e;
+  --cw-footer-border: #2d3544;
+  --cw-footer-text: #868c98;
+}
+
+@theme {
+  --color-primary: #09cc7f;
+  --color-primary-hover: #24ac75;
+  --color-primary-deep: #069c60;
+  --color-navy: #072366;
+  --color-hero-navy: #002d5b;
+  --color-body-navy: #10285d;
+  --color-muted-slate: #57667e;
+  --color-ice: #f8fcff;
+  --color-brand-surface: #f1f4fa;
+  --color-testimonial-surface: #f9fafc;
+  --color-footer-navy: #040c1e;
+  --font-sans: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    scroll-behavior: auto;
+    overflow-x: clip;
+    background-color: #ffffff;
+    color: #10285d;
+  }
+
+  body {
+    font-family: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #10285d;
+    background-color: #ffffff;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #072366;
+  }
+}
+
+/* Signature CharityWorks Button & Card Styles from _common.scss, _variables.scss, _services_section.scss, _footer.scss */
+.btn-charity {
+  background-color: #09cc7f;
+  color: #ffffff;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-charity::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 101%;
+  height: 101%;
+  background: #24ac75;
+  z-index: -1;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+  transition: transform 0.45s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.btn-charity:hover::before {
+  transform: scaleX(1);
+}
+
+.boxed-btn-charity {
+  background-color: #ffffff;
+  color: #072366;
+  border: 1.5px solid #09cc7f;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.boxed-btn-charity:hover {
+  background-color: #09cc7f;
+  color: #ffffff;
+  border-color: #09cc7f;
+}
+
+.white-btn-charity {
+  background-color: #ffffff;
+  color: #072366;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.white-btn-charity:hover {
+  background-color: #072366;
+  color: #ffffff;
+}
+
+/* CharityWorks .single-cat hover sweep card from _services_section.scss */
+.single-cat-card {
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #eceff8;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.single-cat-card::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  background: #09cc7f;
+  transition: height 0.45s ease;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 6px;
+}
+
+.single-cat-card:hover {
+  border-color: #09cc7f;
+  box-shadow: 0 18px 40px rgba(7, 35, 102, 0.08);
+}
+
+.single-cat-card:hover::before {
+  height: 100%;
+}
+
+.single-cat-card:hover .cat-icon-badge {
+  background-color: #ffffff;
+  color: #09cc7f;
+}
+
+.single-cat-card:hover .cat-title-text,
+.single-cat-card:hover .cat-sub-text {
+  color: #ffffff;
+}
+
+/* CharityWorks section pattern & footer surface */
+.section-bg-pattern {
+  background-color: #f8fcff;
+  background-image: url('/assets/img/gallery/section_bg03.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer-wrapper-charity {
+  background-color: #040c1e;
+  background-image: url('/assets/img/gallery/footer_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Preloader ring animation from CharityWorks style.css */
+@keyframes cwSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cw-preloader-ring {
+  animation: cwSpin 2s linear infinite;
+}
+
+/* Voice Tour & WhatsApp subtle ring pulse */
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 1.6s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+/* iOS Safe Area Utilities per Step 18 */
+.pb-safe {
+  padding-bottom: 1rem;
+}
+
+.bottom-safe {
+  bottom: 24px;
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+  .bottom-safe {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
